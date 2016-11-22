@@ -12,6 +12,7 @@ This is LAB 04
 * clone repository
 * ensure SFML_SDK environment variable exits
 * ensure SFML Version SFML 2.3.2 Visual C++ 14 (2015) - 32-bit is installed
+* (http://www.sfml-dev.org/files/SFML-2.3.2-windows-vc14-32-bit.zip "SFML-2.3.2-windows-vc14-32-bit.zip")
 
 ### Who do I talk to? ###
 
