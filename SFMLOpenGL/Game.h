@@ -20,6 +20,7 @@ private:
 	void update();
 	void draw();
 	void unload();
+	int tracker;
 
 	// // Uncomment for Part 2
 	// // ********************
