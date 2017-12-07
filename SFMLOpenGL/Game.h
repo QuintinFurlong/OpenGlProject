@@ -20,11 +20,15 @@ private:
 	void update();
 	void draw();
 	void unload();
-	const int primatives;
 
-	GLuint index;
-	Clock clock;
-	Time elapsed;
+	// // Uncomment for Part 2
+	// // ********************
+	// const int primatives;
 
-	float rotationAngle = 0.0f;
+	//GLuint index;
+	//Clock clock;
+	//Time elapsed;
+
+	//float rotationAngle = 0.0f;
+	// // ********************
 };
