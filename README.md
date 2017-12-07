@@ -1,10 +1,10 @@
 # README #
 
-This is LAB 04 
+This is LAB 05 
 
 ### What is this repository for? ###
 
-* Lab 04 Transformations
+* Lab 05 Immediate and DisplayList Drawing (with transformations)
 * Version 2.0
 
 ### How do I get set up? ###
