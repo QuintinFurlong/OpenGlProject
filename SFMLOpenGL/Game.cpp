@@ -1,8 +1,7 @@
 #include <Game.h>
 
-Game::Game() : window(VideoMode(800, 600), "OpenGL")
+Game::Game() : window(VideoMode(800, 600), "OpenGL"), primatives(2)
 {
-	tracker = 0;
 }
 
 Game::~Game() {}
@@ -39,18 +38,17 @@ void Game::initialize()
 	gluPerspective(45.0, window.getSize().x /
 		window.getSize().y, 1.0, 500.0);
 	glMatrixMode(GL_MODELVIEW);
-
 	isRunning = true;
+	glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
 }
 
 void Game::update()
 {
 	cout << "Update up" << endl;
-	tracker++;
-	if (tracker > 10)
-	{
-		tracker = 0;
-	}
+	glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
+	rotationAngle = 0.01;
+	glTranslatef(0.0001f, 0.0f, 0.0f);
+	glScalef(1.01f, 1.0f, 1.0f);
 }
 
 void Game::draw()
@@ -126,6 +124,17 @@ void Game::draw()
 		glVertex3f(1.3, -0.4, -5.0);
 	}
 	glEnd();
+	glBegin(GL_POLYGON); {
+		glVertex3f(-0.2, -0.6, -5.0);
+		glVertex3f(0.2, -0.6, -5.0);
+		glVertex3f(0.6, -1, -5.0);
+		glVertex3f(0.6, -1.4, -5.0);
+		glVertex3f(0.2, -1.8, -5.0);
+		glVertex3f(-0.2, -1.8, -5.0);
+		glVertex3f(-0.6, -1.4, -5.0);
+		glVertex3f(-0.6, -1, -5.0);
+	}
+	glEnd();
 
 	window.display();
 }
@@ -134,4 +143,3 @@ void Game::unload()
 {
 	cout << "Cleaning up" << endl;
 }
-
