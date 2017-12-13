@@ -45,10 +45,81 @@ void Game::initialize()
 void Game::update()
 {
 	cout << "Update up" << endl;
-	glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
 	rotationAngle = 0.01;
-	glTranslatef(0.0001f, 0.0f, 0.0f);
-	glScalef(1.01f, 1.0f, 1.0f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		glTranslatef(0.001f, 0.0f, 0.0f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		glTranslatef(-0.001f, 0.0f, 0.0f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		glTranslatef(0.0f, 0.001f, 0.0f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		glTranslatef(0.0f, -0.001f, 0.0f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
+	{
+		glTranslatef(0.0f, 0.0f, 0.001f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::PageDown))
+	{
+		glTranslatef(-0.0f, 0.0f, -0.001f);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	{
+		glRotatef(rotationAngle, 1.0f, 0.0f, 0.0f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	{
+		glRotatef(rotationAngle, -1.0f, 0.0f, 0.0f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		glRotatef(rotationAngle, 0.0f, 1.0f, 0.0f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+	{
+		glRotatef(rotationAngle, 0.0f, -1.0f, 0.0f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		glRotatef(rotationAngle, 0.0f, 0.0f, 1.0f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+	{
+		glRotatef(rotationAngle, 0.0f, 0.0f, -1.0f);
+	}
+			
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
+	{
+		glScalef(1.0001f, 1.0f, 1.0f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V))
+	{
+		glScalef(0.9999f, 1.0f, 1.0f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
+	{
+		glScalef(1.0f, 1.0001f, 1.0f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
+	{
+		glScalef(1.0f, 0.9999f, 1.0f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
+	{
+		glScalef(1.0f, 1.0f, 1.0001f);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N))
+	{
+		glScalef(1.0f, 1.0f, 0.9999f);
+	}
 }
 
 void Game::draw()
